@@ -1,0 +1,25 @@
+<%= form_with model: article do |form|%>
+<p>
+<% if @article.errors.any?%>
+<ul>
+    <% @article.errors.full_messages.each do |message|%>
+    <li><%= message%></li>
+    <%end%>
+</ul>
+<%end%>
+
+<p>
+    <%= form.label :name%>
+    <%= form.text_field :name%>
+</p>
+<p>
+    <%= form.label :body%>
+    <%= form.text_field :body%>
+</p>
+
+<p>
+<%= form.submit%>
+</p>
+
+<%end%>
+<%=link_to "Back To Articles", articles_path%>
